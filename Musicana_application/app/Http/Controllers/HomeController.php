@@ -36,6 +36,13 @@ class HomeController extends Controller
       
     //    dd($user->role_id);
     }
+    public function allmusic()
+    {
+        return view("allmusic");
+
+      
+    //    dd($user->role_id);
+    }
     // public function index()
     // {
     //    $user = Auth::user();

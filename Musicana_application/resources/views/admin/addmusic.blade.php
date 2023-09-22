@@ -18,6 +18,7 @@
                 <div class="form-group">
                     <label for="music_pic">Music_Pic</label>
                     <input type="file" name="music_pic" class="form-control" id="music_pic">
+                    
                 </div>
                 <div class="form-group">
                     <label for="music">Music</label>

@@ -40,7 +40,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="home">
+                <a class="navbar-brand" href="homepage">
                     Music Buzz
                 </a>
                 <!-- <button class="navbar-toggler ml-lg-auto ml-sm-5" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,12 +50,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav text-center ml-auto">
                         <li class="nav-item active  mr-1">
-                            <a class="nav-link" href="home">Home
+                            <a class="nav-link" href="homepage">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item  mr-1">
-                            <a class="nav-link scroll" href="allmusic">all music</a>
+                            <a class="nav-link" href="allmusic">all music</a>
                         </li>
                         @guest
                         @if (Route::has('login'))

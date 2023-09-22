@@ -2,9 +2,12 @@
 
 @section('admin')
     <!--main content start-->
+   
+
     <section id="main-content">
         <section class="wrapper">
-           
+            <h2 class="text-center ">All Music</h2>
+            <a class="btn btn-success" href="/admin/addmusic">Add Music</a>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -20,25 +23,32 @@
                         <tr>
                             <td> {{ $music['music_name'] }}</td>
                             <td> {{ $music['artist_name'] }}</td>
-                            <td> {{ $music['music_pic'] }}</td>
-                            <td> {{ $music['music'] }}</td>
                             <td>
-                                <a href="deletemusic/{{ $music['id'] }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <img src="{{ '/uploads/' . $music['music_pic'] }}" width="100px" height="100px"
+                                    alt="">
+
+                            <td>
+                                
+                                {{ $music['music'] }}</td>
+                            <td>
+                                <a href="deletemusic/{{ $music['id'] }}" onclick="return myFunction();"><i
+                                        class="fa fa-trash" aria-hidden="true"></i></a>
 
                             </td>
                         </tr>
+                       
                     @endforeach
 
 
                 </tbody>
             </table>
             @push('name')
-                {{-- <script>
+                <script>
                     function myFunction() {
                         if (!confirm("Are You Sure to delete this"))
                             event.preventDefault();
                     }
-                </script> --}}
+                </script>
             @endpush
         </section>
     </section>

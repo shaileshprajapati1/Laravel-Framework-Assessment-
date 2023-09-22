@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/homepage', [App\Http\Controllers\HomeController::class, 'home']);
+Route::get('/allmusic', [App\Http\Controllers\HomeController::class, 'allmusic']);
+Route::get('/allmusic', [App\Http\Controllers\MusicsController::class, 'playmusic']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('checkRollid');
 
 Route::prefix('admin')->group(function(){
@@ -32,5 +34,6 @@ Route::prefix('admin')->group(function(){
     Route::any('/addmusic',[App\Http\Controllers\MusicsController::class, 'create']);
     Route::any('/savemusic',[App\Http\Controllers\MusicsController::class, 'store']);
     Route::any('/viewmusics',[App\Http\Controllers\MusicsController::class, 'show']);
+    Route::any('/deletemusic/{mid}',[App\Http\Controllers\MusicsController::class, 'destroy']);
 
 });

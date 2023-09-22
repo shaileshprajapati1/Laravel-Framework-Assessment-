@@ -76,6 +76,13 @@ class MusicsController extends Controller
         //  dd($allmusics);
         return view("admin/viewallmusic", compact('allmusics'));
     }
+    public function playmusic(musics $musics)
+    {
+
+        $allmusics = $musics->all();
+        //  dd($allmusics);
+        return view("allmusic", compact('allmusics'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -96,8 +103,12 @@ class MusicsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(musics $musics)
+    public function destroy($mid,musics $musics)
     {
-        //
+        $allmusic = $musics::find($mid);
+        // dd($allmusic);
+        $allmusic->delete();
+        return redirect("admin/viewmusics");
+
     }
 }
