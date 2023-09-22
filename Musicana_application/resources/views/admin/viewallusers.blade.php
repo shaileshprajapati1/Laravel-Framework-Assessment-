@@ -27,10 +27,12 @@
                             <td>{{ $data->email }}</td>
                             @if ($data->role_id == 2)
                                 <td>
-                                    <a href="edituser/{{ $data->id }}"><i class="fa fa-user" aria-hidden="true"></i></a>&nbsp;&nbsp;
-                                    &nbsp; &nbsp;<a href="deleteuser/{{ $data->id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                                    
-                                
+                                    <a href="edituser/{{ $data->id }}"><i class="fa fa-user"
+                                            aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                    &nbsp; &nbsp;<a href="deleteuser/{{ $data->id }}" onclick="return myFunction();"><i
+                                            class="fa fa-trash" aria-hidden="true"></i></a>
+
+
                                 </td>
 
                         </tr>
@@ -39,7 +41,14 @@
 
                 </tbody>
             </table>
-
+            @push('name')
+                <script>
+                    function myFunction() {
+                        if (!confirm("Are You Sure to delete this"))
+                            event.preventDefault();
+                    }
+                </script>
+            @endpush
         </section>
     </section>
 @endsection

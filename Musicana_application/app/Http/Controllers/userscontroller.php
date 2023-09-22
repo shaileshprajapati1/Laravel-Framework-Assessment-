@@ -40,7 +40,7 @@ class userscontroller extends Controller
     public function show($cid, users $users, Request $request)
     {
         $alluser = $users::find($cid);
-        return view('admin.edituser',compact('alluser'));
+        return view('admin.edituser', compact('alluser'));
     }
 
     /**
@@ -53,17 +53,23 @@ class userscontroller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update($cid,users $users,Request $request )
+    public function update($cid, users $users, Request $request)
     {
         $allusers = $users::find($cid);
-     
+        //    dd($allusers);
+        $allusers->name = $request->name;
+        $allusers->email = $request->email;
+        $allusers->save();
+        return redirect("admin/viewallusers");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($cid, users $users)
     {
-        //
+        $allusers = $users::find($cid);
+        $allusers->delete();
+        return redirect("admin/viewallusers");
     }
 }

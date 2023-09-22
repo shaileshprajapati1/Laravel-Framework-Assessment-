@@ -297,8 +297,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Music</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="">Add Music</a></li>
-                                <li><a href="">All View Music</a></li>
+                                <li><a href="addmusic">Add Music</a></li>
+                                <li><a href="viewmusics">All View Music</a></li>
                                 <!-- <li><a href="grids.html">Grids</a></li> -->
                             </ul>
                         </li>
@@ -384,7 +384,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--sidebar end-->
 
         @yield("admin")
-
+        
+        @stack('name')
         <!-- footer -->
         <div class="footer">
             <div class="wthree-copyright">
