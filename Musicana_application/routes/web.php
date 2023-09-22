@@ -25,6 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 Route::prefix('admin')->group(function(){
     Route::view('/admindashboard',"admin.admindashboard");
     Route::view('/viewallusers',"admin.viewallusers");
-    Route::get("/viewallusers",[App\Http\Controllers\userscontroller::class, 'index']);
+    Route::get('/viewallusers',[App\Http\Controllers\userscontroller::class, 'index']);
+    Route::any('/edituser/{cid}',[App\Http\Controllers\userscontroller::class, 'show']);
+    Route::any('/updateusers/{cid}',[App\Http\Controllers\userscontroller::class, 'update']);
 
 });

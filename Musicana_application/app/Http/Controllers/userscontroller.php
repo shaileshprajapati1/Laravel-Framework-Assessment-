@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\users; 
+use App\Models\users;
 use Illuminate\Http\Request;
 use DB;
 
@@ -13,9 +13,9 @@ class userscontroller extends Controller
      */
     public function index(users $users)
     {
-        $allusers = $users->all(); 
+        $allusers = $users->all();
         // dd($allusers);
-        return view('admin.viewallusers',compact('allusers'));
+        return view('admin.viewallusers', compact('allusers'));
     }
 
     /**
@@ -37,25 +37,26 @@ class userscontroller extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($cid, users $users, Request $request)
     {
-        //
+        $alluser = $users::find($cid);
+        return view('admin.edituser',compact('alluser'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($cid, string $id, Request $request)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update($cid,users $users,Request $request )
     {
-        //
+        $allusers = $users::find($cid);
+     
     }
 
     /**
