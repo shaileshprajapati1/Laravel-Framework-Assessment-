@@ -19,10 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/homepage', [App\Http\Controllers\HomeController::class, 'home']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('checkRollid');
 
 Route::prefix('admin')->group(function(){
     Route::view('/admindashboard',"admin.admindashboard");
+    Route::view('/viewallusers',"admin.viewallusers");
+    Route::get("/viewallusers",[App\Http\Controllers\userscontroller::class, 'index']);
 
 });
